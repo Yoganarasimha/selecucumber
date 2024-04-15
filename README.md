@@ -1,2 +1,2 @@
 # selecucumber
-Practice
+Practice project for personal use
