@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" outputDirectory="C:/Users/YOGASHANKAR/Documents/selecucumber/test-output">
+    <listeners>
+        <listener class-name="org.example.CustomListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="C:/Users/YOGASHANKAR/Documents/selecucumber">
+        <classes>
+            <class name="org.example.ParTests"/>
+            <class name="org.example.ParTests2"/>
+        </classes>
+    </test>
+</suite>
