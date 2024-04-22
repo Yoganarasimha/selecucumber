@@ -18,7 +18,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class HomePage{
-    protected static final Logger logger = LogManager.getLogger();
+    protected final Logger logger = LogManager.getLogger(this.getClass());
     @FindBy(xpath = "//textarea[@aria-label='Search']")
     WebElement search;
 

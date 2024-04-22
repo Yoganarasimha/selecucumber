@@ -6,6 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.*;
+import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
 import java.io.IOException;
@@ -67,4 +68,12 @@ public class CustomListener extends TestListenerAdapter implements ITestListener
         return filePath.toFile();
     }
 
+
+    @BeforeSuite
+    public void logSetup(){
+        // Configure Log4j programmatically
+        System.setProperty("log4j.configuration", "org/apache/logging/log4j/simpleLogger.properties");
+        // You can adjust the log level as per your requirements
+        System.setProperty("org.apache.logging.log4j.simplelog.level", "DEBUG");
+    }
 }

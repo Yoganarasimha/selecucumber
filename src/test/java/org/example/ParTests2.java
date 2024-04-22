@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ParTests2 {
-    protected static final Logger logger = LogManager.getLogger();
+    protected final Logger logger = LogManager.getLogger(this.getClass());
     ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     @BeforeMethod
     public void initiate(ITestContext ctx){

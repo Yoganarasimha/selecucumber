@@ -12,7 +12,7 @@ import org.testng.annotations.*;
 import java.sql.Driver;
 
 public class ParTests {
-    protected static final Logger logger = LogManager.getLogger();
+    protected final Logger logger = LogManager.getLogger(this.getClass());
     ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     @BeforeMethod
     public void initiate(ITestContext ctx){
