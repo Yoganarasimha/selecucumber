@@ -1,10 +1,13 @@
 package org.example;
 
+import com.sun.jna.Pointer;
 import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.apache.logging.log4j.Logger;
@@ -44,6 +47,9 @@ public class HomePage{
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
         List<WebElement> list = driver.findElements(By.id("search"));
         logger.debug("found elements "+list.size());
+        Actions actions = new Actions(driver);
+        actions.click(search).pause(Duration.ofSeconds(2)).release().build().perform();
+        PointerInput pi = new PointerInput(PointerInput.Kind.MOUSE,"default mouse");
         return list.size();
     }
 

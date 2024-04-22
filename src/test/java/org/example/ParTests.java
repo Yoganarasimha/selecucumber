@@ -1,6 +1,7 @@
 package org.example;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -26,6 +27,7 @@ public class ParTests {
         HomePage hp = new HomePage((WebDriver) ctx.getAttribute("driver"));
         hp.getHomrPage();
         hp.enterSearchText("love");
+
         int c = hp.getSearchResCount("love");
         Assert.assertEquals(c,1);
     }
