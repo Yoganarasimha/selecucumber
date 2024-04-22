@@ -36,7 +36,7 @@ public class ParTests {
         HomePage hp = new HomePage((WebDriver) ctx.getAttribute("driver"));
         hp.getHomrPage();
         hp.enterSearchText("goal");
-        int c = hp.getSearchResCount("love");
+        int c = hp.getSearchResCount("goal");
         Assert.assertEquals(c,1);
     }
 }
