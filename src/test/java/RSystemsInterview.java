@@ -9,11 +9,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.*;
+import java.util.function.Function;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class RSystemsInterview {
     public static void main(String[] args) {
-        irctc();
+        //tablePrinter(5);
+        tablePrint(20,6);
+
     }
 
     public static void q1(){
@@ -87,6 +93,42 @@ public class RSystemsInterview {
 
 
         driver.quit();
+    }
+
+    public static void q21(){
+        String xyz = "Chamberlain has a good workCulture";
+        String[] words = xyz.split(" ");
+        int maxlength = 0;
+        for(String word: words){
+            if (word.length()>maxlength) maxlength = word.length();
+        }
+        for(String word: words){
+            String w = (word.length()<maxlength) ? word.indent(maxlength-word.length()) : word;
+            System.out.println(w);
+        }
+
+
+    }
+
+    public static void tableOf3(){
+        List<Integer> range = new ArrayList<>();
+        for(int i=1;i<=10;i++){
+            range.add(i);
+        }
+        range.forEach(i-> System.out.printf("%d x %d = %d%n",i,3,i*3));
+    }
+
+    public static void tablePrinter(int n){
+        System.out.printf("printing table of %d\n",n);
+        List<Integer> range = new ArrayList<>();
+        for(int i=1;i<=10;i++){
+            range.add(i);
+        }
+        range.forEach(i-> System.out.printf("%d x %d = %d%n",i,n,i*n));
+    }
+
+    public static void tablePrint(int range, int number){
+        IntStream.range(1,range+1).forEach(i-> System.out.printf("%d x%d = %d\n",i,number,i*number));
     }
 
 

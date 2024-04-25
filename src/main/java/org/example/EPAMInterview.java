@@ -27,6 +27,7 @@ public class EPAMInterview {
         WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(WebTableLocator));
         List<WebElement> currentPrices = table.findElements(CurrentPriceLocator);
         OptionalDouble mavPrice = currentPrices.stream().mapToDouble(e-> Double.parseDouble(e.getText())).max();
+        wait.until(new PageLoaded());
         if(mavPrice.isPresent()){
             String addFilter = "[text()='"+mavPrice.getAsDouble()+"']//preceding-sibling::td[a]";
             String companyName = driver.findElement(By.xpath(cellCurrentPricePath+addFilter)).getText();

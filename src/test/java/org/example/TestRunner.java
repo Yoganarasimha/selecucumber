@@ -11,7 +11,8 @@ import org.testng.annotations.Listeners;
 @CucumberOptions(
         glue = {"stepDefinitions","MyHooks"},
         features = "./features/webtest.feature",
-        plugin = {"pretty","html:target/cucumber-reports","json:target/cucumber.json","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}
+        plugin = {"pretty","html:target/cucumber-reports","json:target/cucumber.json","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
+        publish = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
     @BeforeClass

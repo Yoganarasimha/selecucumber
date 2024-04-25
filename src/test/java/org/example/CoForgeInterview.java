@@ -2,6 +2,7 @@ package org.example;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -11,7 +12,7 @@ import java.util.regex.Pattern;
 public class CoForgeInterview {
     public static void main(String[] args) throws ParseException {
         //q1alt();
-        v2();
+        l2q1();
     }
     public void q1(){
         String inp = "Yogashankar";
@@ -49,7 +50,7 @@ public class CoForgeInterview {
         String s3 = String.valueOf(inp.charAt(0));
         System.out.println(s2+s1+s3);
 
-        System.out.println(inp.substring(inp.length()-1)+inp.substring(1,inp.length()-2)+inp.charAt(0));
+        System.out.println(inp.substring(inp.length()-1)+ s1 +inp.charAt(0));
     }
 
     public static void v1() throws ParseException {
@@ -73,4 +74,21 @@ public class CoForgeInterview {
             System.out.println(c);
         }
     }
+
+    public static void l2q1(){
+        int[] inp = {1,2,3,4,5};
+        int len = inp.length;
+
+        int[] output = new int[len];
+
+        for(int i=0;i<len;i++){
+            if(i<len-1){
+                output[i+1] = inp[i];
+            }else{
+                output[0] = inp[i];
+            }
+        }
+        System.out.println(Arrays.toString(output));
+    }
+
 }

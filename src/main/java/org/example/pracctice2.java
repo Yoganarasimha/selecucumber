@@ -1,5 +1,7 @@
 package org.example;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.IntPredicate;
@@ -20,9 +22,20 @@ public class pracctice2 {
         System.out.println(Arrays.stream(nums).filter(x->!isPrime.test(x)).collect(Collectors.toList()));
         swap();
         prc4();*/
-        itex();
+        String s1 = "abc";
+        String s2 = s1;
+        String s3 = new String("abc");
+        System.out.println(s1==s2);
+        System.out.println(s2==s3);
+        String s4 = s1.concat(s2);
+        StringJoiner j1 = new StringJoiner("|","[","]");
+
+        System.out.println(j1.add(s1).add(s2));
     }
 
+    /**
+     * This is a swap program without using other variable
+     */
     public static void swap(){
         int a=100,b=500;
         a=a+b;
@@ -69,8 +82,22 @@ public class pracctice2 {
         }
     }
 
-
-
+    /**
+     * <p>This ia function
+     * This returns a hashmap with name as key and age as value(@Link HashMap)
+     * <i> Use where needed</i></p>
+     * @param age - integer value
+     * @param name - string value
+     *
+     * @return HashMap name:age
+     *
+     * @see HashMap
+     */
+    public static HashMap<String,Integer> foo(int age,String name){
+         HashMap<String,Integer> retval = new HashMap<>();
+         retval.put(name,age);
+         return retval;
+    }
 
 
 }
